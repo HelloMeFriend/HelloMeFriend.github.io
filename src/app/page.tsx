@@ -1,16 +1,12 @@
 "use client";
-import Image from "next/image";
 import TextButton from "./components/textButton";
 import Text from "./components/text";
-import Github from "./icons/Github.svg";
-import Linkedin from "./Linkedin.svg";
-import Mail from "./Mail.svg";
 import Icon from "./components/Icon";
 
 export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
-      <div className="w-[1041px] h-[594px] flex flex-col justify-between items-center p-10 border border-black/15 shadow-md bg-[#F8F3E2]">
+      <div className="w-[1041px] h-[594px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90">
         <div className="w-full flex flex-row justify-between items-start">
           <TextButton>About Me</TextButton>
           <TextButton>Resume</TextButton>
