@@ -1,33 +1,27 @@
 import React from 'react';
 
-interface TextButtonProps {
+interface TextProps {
     children: React.ReactNode;
-    onClick?: () => void;
     style?: React.CSSProperties;
+    size?: 'large' | 'small';
 }
 
-const TextButton: React.FC<TextButtonProps> = ({ children, onClick, style }) => (
-    <button
-        onClick={onClick}
+const Text: React.FC<TextProps> = ({ children, style, size = 'large' }) => (
+    <span
         style={{
-            background: 'none',
-            border: 'none',
             color: 'black',
-            cursor: 'pointer',
-            padding: 0,
             fontFamily: 'var(--font-andada-pro), serif',
-            fontSize: '30px',
-            // Add both outside and inner shadows
+            fontSize: size === 'large' ? '30px' : '20px',
+            ...style,
             boxShadow: `
                 0px 1px 6px 0px rgba(87, 87, 87, 0.25), /* Outside shadow */
                 0px 4px 16px 0px rgba(0, 0, 0, 0.25) inset /* Inner shadow */
             `,
-            ...style,
             filter: "blur(.8px) url(#filter)",
         }}
     >
         {children}
-    </button>
+    </span>
 );
 
-export default TextButton;
+export default Text;
