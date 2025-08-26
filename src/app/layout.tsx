@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Andada_Pro} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const andadaPro = Andada_Pro({
+  variable: "--font-andada-pro",
+  subsets: ["latin"],
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +31,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${andadaPro.variable} antialiased`}
       >
+        <svg width="0" height="0" style={{ position: 'absolute' }}>
+          <filter id="filter">
+            <feComponentTransfer>
+              <feFuncA type="discrete" tableValues="0 .7 .9 .9" />
+            </feComponentTransfer>
+          </filter>
+        </svg>
         {children}
       </body>
     </html>
