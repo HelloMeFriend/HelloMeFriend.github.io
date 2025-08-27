@@ -1,6 +1,8 @@
 import React from "react";
 
 interface IconProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  x?: number;
+  y?: number;
   width?: number;
   height?: number;
   children: React.ReactNode;
@@ -8,6 +10,8 @@ interface IconProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Icon: React.FC<IconProps> = ({
+  x = 0,
+  y = 0,
   width = 32,
   height = 32,
   children,
@@ -26,7 +30,7 @@ const Icon: React.FC<IconProps> = ({
     }}
     {...buttonProps}
   >
-    <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} fill="none">
+    <svg width={width} height={height} viewBox={`${x} ${y} ${width} ${height}`} fill="none">
       {children}
     </svg>
   </button>
