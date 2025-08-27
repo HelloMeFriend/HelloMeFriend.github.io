@@ -72,6 +72,6 @@ body::before {
 
 /* On hover: restart animation */
 .group:hover .icon-stroke-hover {
-  animation: draw-stroke 1.5s ease forwards;
+  animation: draw-stroke 2s ease forwards;
 }
 
