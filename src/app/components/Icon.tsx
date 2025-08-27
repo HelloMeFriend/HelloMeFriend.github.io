@@ -20,6 +20,7 @@ const Icon: React.FC<IconProps> = ({
       alignItems: "center",
       background: "none",
       border: "none",
+      cursor: "pointer",
       padding: 0,
       ...style,
     }}

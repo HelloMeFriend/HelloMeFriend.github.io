@@ -36,3 +36,19 @@ body::before {
   background: url("/noise.svg") repeat;
   opacity: 0.2;
 }
+
+.custom-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px; /* Control how far below the text it appears */
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    opacity: 0;
+}
+
+.custom-underline:hover::after {
+    opacity: 1;
+}
+

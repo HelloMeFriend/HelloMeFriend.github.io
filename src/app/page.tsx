@@ -2,11 +2,22 @@
 import TextButton from "./components/textButton";
 import Text from "./components/text";
 import Icon from "./components/Icon";
+import Hand from "/Hand.png";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
-      <div className="w-[1041px] h-[594px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
+      <img
+        src={"/Hand.png"}
+        alt="Hand"
+        className="absolute left-1/2 -translate-x-1/2 top-0 z-20 w-[500px] pointer-events-none"
+      />
+      <div
+        className="w-[1041px] h-[594px] flex flex-col justify-between items-center mt-20  p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
+        style={{
+          borderRadius: '4px 4px 4px 4px',
+        }}
+      >
         <div className="w-full flex flex-row justify-between items-start">
           <TextButton>About Me</TextButton>
           <TextButton>Resume</TextButton>

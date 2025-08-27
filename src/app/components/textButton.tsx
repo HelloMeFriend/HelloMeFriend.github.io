@@ -8,6 +8,7 @@ interface TextButtonProps {
 
 const TextButton: React.FC<TextButtonProps> = ({ children, onClick, style }) => (
     <button
+        className="custom-underline"
         onClick={onClick}
         style={{
             background: 'none',
@@ -17,13 +18,13 @@ const TextButton: React.FC<TextButtonProps> = ({ children, onClick, style }) => 
             padding: 0,
             fontFamily: 'var(--font-andada-pro), serif',
             fontSize: '30px',
-            // Add both outside and inner shadows
             boxShadow: `
-                0px 1px 6px 0px rgba(87, 87, 87, 0.25), /* Outside shadow */
-                0px 4px 16px 0px rgba(0, 0, 0, 0.25) inset /* Inner shadow */
+                0px 1px 6px 0px rgba(87, 87, 87, 0.25),
+                0px 4px 16px 0px rgba(0, 0, 0, 0.25) inset
             `,
             ...style,
             filter: "blur(.8px) url(#filter)",
+            position: 'relative',
         }}
     >
         {children}
