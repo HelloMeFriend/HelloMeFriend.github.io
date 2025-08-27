@@ -6,7 +6,7 @@ import Hand from "/Hand.png";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
+    <div className="flex items-center justify-center min-h-screen bg-gray-200 relative">
       <img
         src={"/Hand.png"}
         alt="Hand"
