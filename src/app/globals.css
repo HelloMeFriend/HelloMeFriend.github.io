@@ -52,3 +52,26 @@ body::before {
     opacity: 1;
 }
 
+
+@keyframes draw-stroke {
+  from {
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+  }
+  to {
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Default: icon is fully drawn */
+.icon-stroke-hover {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+}
+
+/* On hover: restart animation */
+.group:hover .icon-stroke-hover {
+  animation: draw-stroke 1.5s ease forwards;
+}
+
