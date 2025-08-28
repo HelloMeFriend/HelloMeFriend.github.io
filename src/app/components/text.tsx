@@ -3,7 +3,7 @@ import React from 'react';
 interface TextProps {
     children: React.ReactNode;
     style?: React.CSSProperties;
-    size?: 'large' | 'small';
+    size?: 'large' | 'medium' | 'small';
 }
 
 const Text: React.FC<TextProps> = ({ children, style, size = 'large' }) => (
@@ -11,7 +11,10 @@ const Text: React.FC<TextProps> = ({ children, style, size = 'large' }) => (
         style={{
             color: 'black',
             fontFamily: 'var(--font-andada-pro), serif',
-            fontSize: size === 'large' ? '30px' : '20px',
+            fontSize:
+                size === 'large' ? '30px' :
+                size === 'medium' ? '28px' :
+                '20px',
             ...style,
             boxShadow: `
                 0px 1px 6px 0px rgba(87, 87, 87, 0.25), /* Outside shadow */
