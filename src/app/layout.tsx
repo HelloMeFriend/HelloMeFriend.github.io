@@ -36,7 +36,7 @@ export default function RootLayout({
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <filter id="filter">
             <feComponentTransfer>
-              <feFuncA type="discrete" tableValues="0 .7 .9 .9" />
+              <feFuncA type="discrete" tableValues="0 .95 .95 .95" />
             </feComponentTransfer>
           </filter>
         </svg>
