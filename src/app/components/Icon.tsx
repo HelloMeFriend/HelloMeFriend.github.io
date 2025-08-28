@@ -53,7 +53,7 @@ const Icon: React.FC<IconProps> = ({
             typeof child.type === "string" &&
             child.type === "path"
           ) {
-            return React.cloneElement(child as React.ReactElement<any>, {
+            return React.cloneElement(child as React.ReactElement<React.SVGProps<SVGPathElement>>, {
               ref: pathRef,
               className: "icon-stroke-hover",
             });
