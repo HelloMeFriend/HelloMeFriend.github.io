@@ -1,52 +1,31 @@
 "use client";
 import TextButton from "./components/textButton";
-import Text from "./components/text";
 import Icon from "./components/Icon";
-import AboutMe from "./components/aboutMe";
-import Experience from "./components/experience";
+import IconTab from "./components/content/iconTab"
+import AboutMe from "./components/content/aboutMe";
+import Experience from "./components/content/experience";
+import HomeContent from "./components/content/home";
+import BackIcon from "./components/backIcon";
 
 import { useState } from "react";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<"home" | "about" | "resume" | "experience">("home");
 
-  // TODO: Update this with a home component
-  const homeContent = (
-    <>
-      <Text size="large">Omar ALSHANYOUR</Text>
-      <Text size="small">Software Developer</Text>
-    </>
-  );
-
   const renderContent = () => {
     switch (activeSection) {
       case "about": return <AboutMe />;
-      // case "resume": return <ResumeContent />;
       case "experience": return <Experience />;
-      case "home": return homeContent;
-      default: return (
-        homeContent
-      );
+      case "home": return <HomeContent />;
+      default: return <HomeContent />;
     }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
-      <img
-        src={"/Hand.png"}
-        alt="Hand"
-        className="absolute left-1/2 -translate-x-1/2 top-0 z-20 w-[500px] pointer-events-none"
-      />
       <div className="relative">
         {activeSection !== "home" && (
-          <Icon
-            width={50}
-            height={50}
-            onClick={() => setActiveSection("home")}
-            className="absolute z-30 cursor-pointer"
-          >
-            <path d="M25 3.75 a21.25 21.25 0 1 0 21.25 21.25 A21.2325 21.2325 0 0 0 25 3.75 Z m0 37.5 a16.25 16.25 0 1 1 16.25 -16.25 A16.2175 16.2175 0 0 1 25 41.25 Z M29.125 14.375 a2.4175 2.4175 0 0 0 -3.5 0 L18.5 21.5 a4.98 4.98 0 0 0 0 7.125 L25.625 35.75 a2.475 2.475 0 0 0 3.5 -3.5 l-7 -7.25 L29.25 17.875 C30.125 17 30.125 15.375 29.125 14.375 Z" stroke="rgb(30,30,30)" strokeWidth="1.5" fill="black" strokeLinecap="round" strokeLinejoin="round" />
-          </Icon>
+          <BackIcon onClick={() => setActiveSection("home")} />
         )}
         <div
           className="w-[1145px] h-[653px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
@@ -54,39 +33,20 @@ export default function Home() {
             borderRadius: '4px 4px 4px 4px',
           }}
         >
+
+          <img
+            src={"/Hand3.png"}
+            alt="Hand"
+            className="absolute left-15/32 -translate-x-1/2 -top-[640px] z-20 w-[500px] pointer-events-none"
+          />
           <div className="w-full flex flex-row justify-between items-start">
             <TextButton onClick={() => setActiveSection("about")}>About Me</TextButton>
-            <a href="/1753900046.pdf" target="_blank" rel="noopener noreferrer">
-            <TextButton>Resume</TextButton>
-            </a>
+            <TextButton onClick={() => setActiveSection("experience")}>Experience</TextButton>
           </div>
           <div className="w-full flex flex-col justify-center items-center align-middle">
             {renderContent()}
           </div>
-          <div className="w-full flex flex-row justify-between items-start px-60">
-            <TextButton onClick={() => setActiveSection("experience")}>- Experience - </TextButton>
-
-            {/* GitHub */}
-            <a href="https://github.com/HelloMeFriend" target="_blank" rel="noopener noreferrer">
-              <Icon x={1} y={1} width={46} height={46}>
-                <path d="M 24 4 C 12.972066 4 4 12.972074 4 24 C 4 35.027926 12.972066 44 24 44 C 35.027934 44 44 35.027926 44 24 C 44 12.972074 35.027934 4 24 4 z M 24 7 C 33.406615 7 41 14.593391 41 24 C 41 31.66536 35.956939 38.122519 29 40.251953 L 29 35.136719 C 29 33.226635 27.899316 31.588619 26.308594 30.773438 A 10 8 0 0 0 32.4375 18.720703 C 32.881044 17.355414 33.376523 14.960672 32.199219 13.076172 C 29.929345 13.076172 28.464667 14.632086 27.765625 15.599609 A 10 8 0 0 0 24 15 A 10 8 0 0 0 20.230469 15.59375 C 19.529731 14.625773 18.066226 13.076172 15.800781 13.076172 C 14.449711 15.238817 15.28492 17.564557 15.732422 18.513672 A 10 8 0 0 0 21.681641 30.779297 C 20.3755 31.452483 19.397283 32.674042 19.097656 34.15625 L 17.783203 34.15625 C 16.486203 34.15625 15.98225 33.629234 15.28125 32.740234 C 14.58925 31.851234 13.845172 31.253859 12.951172 31.005859 C 12.469172 30.954859 12.144453 31.321484 12.564453 31.646484 C 13.983453 32.612484 14.081391 34.193516 14.650391 35.228516 C 15.168391 36.160516 16.229687 37 17.429688 37 L 19 37 L 19 40.251953 C 12.043061 38.122519 7 31.66536 7 24 C 7 14.593391 14.593385 7 24 7 z" fillRule="evenodd" stroke="rgb(30,30,30)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" />
-              </Icon>
-            </a>
-
-            {/* LinkedIn */}
-            <a href="https://www.linkedin.com/in/omar-alshanyour-647297232/" target="_blank" rel="noopener noreferrer">
-              <Icon x={10} y={10} width={44} height={44}>
-                <path id="Icon" d="M 23.773438 12 C 12.855437 12 12 12.854437 12 23.773438 L 12 40.226562 C 12 51.144563 12.855438 52 23.773438 52 L 40.226562 52 C 51.144563 52 52 51.145563 52 40.226562 L 52 23.773438 C 52 12.854437 51.145563 12 40.226562 12 L 23.773438 12 z M 21.167969 16 L 42.832031 16 C 47.625031 16 48 16.374969 48 21.167969 L 48 42.832031 C 48 47.625031 47.624031 48 42.832031 48 L 21.167969 48 C 16.374969 48 16 47.624031 16 42.832031 L 16 21.167969 C 16 16.374969 16.374969 16 21.167969 16 z M 22.501953 18.503906 C 20.872953 18.503906 19.552734 19.824172 19.552734 21.451172 C 19.552734 23.078172 20.871953 24.400391 22.501953 24.400391 C 24.126953 24.400391 25.447266 23.079172 25.447266 21.451172 C 25.447266 19.826172 24.126953 18.503906 22.501953 18.503906 z M 37.933594 26.322266 C 35.473594 26.322266 33.823437 27.672172 33.148438 28.951172 L 33.078125 28.951172 L 33.078125 26.728516 L 28.228516 26.728516 L 28.228516 43 L 33.28125 43 L 33.28125 34.949219 C 33.28125 32.826219 33.687359 30.771484 36.318359 30.771484 C 38.912359 30.771484 38.945312 33.200891 38.945312 35.087891 L 38.945312 43 L 44 43 L 44 34.074219 C 44 29.692219 43.054594 26.322266 37.933594 26.322266 z M 19.972656 26.728516 L 19.972656 43 L 25.029297 43 L 25.029297 26.728516 L 19.972656 26.728516 z" fillRule="evenodd" stroke="rgb(30,30,30)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" />
-              </Icon>
-            </a>
-
-            {/* Email */}
-            <a href="mailto:omar-alshanyour@outlook.com">
-              <Icon width={40} height={40}>
-                <path id="Icon" d="M33.3334 6.66663C35.1667 6.66663 36.6667 8.16663 36.6667 9.99996L36.6667 30C36.6667 31.8333 35.1667 33.3333 33.3334 33.3333L6.66671 33.3333C4.83337 33.3333 3.33337 31.8333 3.33337 30L3.33337 9.99996C3.33337 8.16663 4.83337 6.66663 6.66671 6.66663L33.3334 6.66663ZM36.6667 9.99996L20 21.6666L3.33337 9.99996" fillRule="evenodd" stroke="rgb(30,30,30)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.5" />
-              </Icon>
-            </a>
-          </div>
+          <IconTab />
         </div>
       </div>
     </div>
