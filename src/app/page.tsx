@@ -1,6 +1,5 @@
 "use client";
 import TextButton from "./components/textButton";
-import Icon from "./components/Icon";
 import IconTab from "./components/content/iconTab"
 import AboutMe from "./components/content/aboutMe";
 import Experience from "./components/content/experience";
