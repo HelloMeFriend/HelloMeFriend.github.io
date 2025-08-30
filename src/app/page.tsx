@@ -1,22 +1,29 @@
 "use client";
 import TextButton from "./components/textButton";
-import IconTab from "./components/content/iconTab"
+import IconTab from "./components/content/iconTab";
 import AboutMe from "./components/content/aboutMe";
 import Experience from "./components/content/experience";
 import HomeContent from "./components/content/home";
 import BackIcon from "./components/backIcon";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<"home" | "about" | "resume" | "experience">("home");
+  const [activeSection, setActiveSection] = useState<
+    "home" | "about" | "resume" | "experience"
+  >("home");
 
   const renderContent = () => {
     switch (activeSection) {
-      case "about": return <AboutMe />;
-      case "experience": return <Experience />;
-      case "home": return <HomeContent />;
-      default: return <HomeContent />;
+      case "about":
+        return <AboutMe />;
+      case "experience":
+        return <Experience />;
+      case "home":
+        return <HomeContent />;
+      default:
+        return <HomeContent />;
     }
   };
 
@@ -26,27 +33,40 @@ export default function Home() {
         {activeSection !== "home" && (
           <BackIcon onClick={() => setActiveSection("home")} />
         )}
-        <div
-          className="w-[1145px] h-[653px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
-          style={{
-            borderRadius: '4px 4px 4px 4px',
-          }}
-        >
 
-          <img
+        <motion.div
+          key={activeSection}
+          initial={{ y: -400, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 80, damping: 20 }}
+          className="w-[1145px] h-[653px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
+          style={{ borderRadius: "4px" }}
+        >
+          <motion.img
             src={"/Hand3.png"}
             alt="Hand"
+            initial={false}
+            animate={activeSection === "home"}
+            transition={{ type: "spring", stiffness: 80, damping: 20 }}
             className="absolute left-15/32 -translate-x-1/2 -top-[640px] z-20 w-[500px] pointer-events-none"
           />
+
+
           <div className="w-full flex flex-row justify-between items-start">
-            <TextButton onClick={() => setActiveSection("about")}>About Me</TextButton>
-            <TextButton onClick={() => setActiveSection("experience")}>Experience</TextButton>
+            <TextButton onClick={() => setActiveSection("about")}>
+              About Me
+            </TextButton>
+            <TextButton onClick={() => setActiveSection("experience")}>
+              Experience
+            </TextButton>
           </div>
+
           <div className="w-full flex flex-col justify-center items-center align-middle">
             {renderContent()}
           </div>
+
           <IconTab />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

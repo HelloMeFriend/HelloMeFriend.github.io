@@ -75,3 +75,23 @@ body::before {
   animation: draw-stroke 2s ease forwards;
 }
 
+/* Business card slide */
+.card {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0);
+}
+
+.card--open {
+  transform: translateY(50px); /* slide down */
+}
+
+/* Hand animation */
+.hand {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(-300px);
+}
+
+.hand--open {
+  transform: translateY(-50px); /* closer to the card */
+}
+
