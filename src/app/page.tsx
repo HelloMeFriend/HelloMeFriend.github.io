@@ -38,7 +38,7 @@ export default function Home() {
           key={activeSection}
           initial={{ y: -400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 80, damping: 20 }}
+          transition={{ type: "spring", stiffness: 30, damping: 18 }}
           className="w-[1145px] h-[653px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
           style={{ borderRadius: "4px" }}
         >
@@ -47,7 +47,7 @@ export default function Home() {
             alt="Hand"
             initial={false}
             animate={activeSection === "home"}
-            transition={{ type: "spring", stiffness: 80, damping: 20 }}
+            transition={{ type: "spring", stiffness: 30, damping: 18 }}
             className="absolute left-15/32 -translate-x-1/2 -top-[640px] z-20 w-[500px] pointer-events-none"
           />
 
