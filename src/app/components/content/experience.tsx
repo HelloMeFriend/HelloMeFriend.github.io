@@ -5,7 +5,7 @@ export default function ExperienceContent() {
         <div className="flex flex-col w-full">
             {/* Main Content */}
             <div className="w-full flex flex-row justify-between items-start bg-white/30 m-2 p-2">
-                
+
                 {/* Experience */}
                 <div className="w-3/8 flex flex-col">
                     <div>
@@ -16,10 +16,10 @@ export default function ExperienceContent() {
                     <div className="flex flex-col pl-4 space-y-5 mt-5">
                         <div>
                             <Text size="ms">
-                                <b>-DevOps I (2025-Present)</b>< br />
+                                <b>-Software Engineer (2025-Present)</b>< br />
                             </Text>
                             <Text size="small" style={{ textAlign: "justify", color: "black" }}>
-                                &nbsp;&nbsp;Intact
+                                &nbsp;&nbsp;Intact Financial Corporation
                             </Text>
                         </div>
                         <div>
@@ -27,12 +27,12 @@ export default function ExperienceContent() {
                                 <b>-DevOps Intern (2024)</b>< br />
                             </Text>
                             <Text size="small" style={{ textAlign: "justify", color: "black" }}>
-                                &nbsp;&nbsp;Intact
+                                &nbsp;&nbsp;Intact Financial Corporation
                             </Text>
                         </div>
                         <div>
                             <Text size="ms">
-                                <b>-Cybersecurity and IT Intern (2022)</b>< br />
+                                <b>-Software Developer Intern (2022)</b>< br />
                             </Text>
                             <Text size="small" style={{ textAlign: "justify", color: "black" }}>
                                 &nbsp;&nbsp;Hydro-Québec
@@ -84,9 +84,29 @@ export default function ExperienceContent() {
             {/* Footer */}
             <div className="text-left mb-4">
                 <Text size="small" style={{ textAlign: "center" }}>
-                    More details can be found on my <b>resume</b> and <b>GitHub</b>..!
+                    More details can be found on my{' '}
+                    <a
+                        href="/1753900046.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                    >
+                        <b>resume</b>
+                    </a>{' '}
+                    and{' '}
+                    <a
+                        href="https://github.com/hellomefriend"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                    >
+                        <b>GitHub</b>
+                    </a>
+                    ..!
                 </Text>
             </div>
+
+
         </div>
     );
 }
