@@ -4,7 +4,7 @@ import TextButton from "../textButton";
 export default function IconTab() {
     return (
         <>
-            <div className="w-full flex flex-row justify-between items-start px-60">
+            <div className="w-full flex justify-between">
 
                 {/* GitHub */}
                 <a href="https://github.com/HelloMeFriend" target="_blank" rel="noopener noreferrer">

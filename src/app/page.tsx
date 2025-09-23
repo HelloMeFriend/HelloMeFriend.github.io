@@ -31,7 +31,9 @@ export default function Home() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative px-4 py-8">
       <div className="relative w-full max-w-6xl">
         {activeSection !== "home" && (
-          <BackIcon onClick={() => setActiveSection("home")} />
+          <div className="mb-20 z-30 relative">
+            <BackIcon onClick={() => setActiveSection("home")} />
+          </div>
         )}
 
         <motion.div
@@ -64,7 +66,7 @@ export default function Home() {
             {renderContent()}
           </div>
 
-          <div className="mt-4 md:mt-6 lg:mt-0">
+          <div className="w-full lg:px-60 mt-4 md:mt-6 lg:mt-0">
             <IconTab />
           </div>
         </motion.div>
