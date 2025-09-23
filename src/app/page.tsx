@@ -28,8 +28,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
-      <div className="relative">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 relative px-4 py-8">
+      <div className="relative w-full max-w-6xl">
         {activeSection !== "home" && (
           <BackIcon onClick={() => setActiveSection("home")} />
         )}
@@ -39,7 +39,7 @@ export default function Home() {
           initial={{ y: -400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 30, damping: 18 }}
-          className="w-[1145px] h-[653px] flex flex-col justify-between items-center mt-25 p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
+          className="w-full h-auto min-h-[400px] md:min-h-[500px] lg:min-h-[653px] flex flex-col justify-between items-center p-4 md:p-6 lg:p-10 border border-black/15 shadow-md bg-[#f0e4be]/90 relative z-10"
           style={{ borderRadius: "4px" }}
         >
           <motion.img
@@ -48,11 +48,10 @@ export default function Home() {
             initial={false}
             animate={activeSection === "home"}
             transition={{ type: "spring", stiffness: 30, damping: 18 }}
-            className="absolute left-15/32 -translate-x-1/2 -top-[640px] z-20 w-[500px] pointer-events-none"
+            className="absolute left-1/2 -translate-x-1/2 -top-[340px] sm:-top-[400px] md:-top-[500px] lg:-top-[640px] z-20 w-[250px] sm:w-[350px] md:w-[400px] lg:w-[500px] pointer-events-none"
           />
 
-
-          <div className="w-full flex flex-row justify-between items-start">
+          <div className="w-full flex flex-row justify-between items-start mb-4 md:mb-6 lg:mb-0">
             <TextButton onClick={() => setActiveSection("about")}>
               About Me
             </TextButton>
@@ -61,11 +60,13 @@ export default function Home() {
             </TextButton>
           </div>
 
-          <div className="w-full flex flex-col justify-center items-center align-middle">
+          <div className="w-full flex flex-col justify-center items-center align-middle flex-1">
             {renderContent()}
           </div>
 
-          <IconTab />
+          <div className="mt-4 md:mt-6 lg:mt-0">
+            <IconTab />
+          </div>
         </motion.div>
       </div>
     </div>
