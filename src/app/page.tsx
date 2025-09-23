@@ -66,7 +66,7 @@ export default function Home() {
             {renderContent()}
           </div>
 
-          <div className="w-full lg:px-60 mt-4 md:mt-6 lg:mt-0">
+          <div className="w-full md:px-30 lg:px-60 mt-4 md:mt-6 lg:mt-0">
             <IconTab />
           </div>
         </motion.div>
