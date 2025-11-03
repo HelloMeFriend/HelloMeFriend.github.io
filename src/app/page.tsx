@@ -31,9 +31,15 @@ export default function Home() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative px-4 py-8">
       <div className="relative w-full max-w-6xl">
         {activeSection !== "home" && (
-          <div className="mb-20 z-30 relative">
+          <motion.div
+            key={`back-${activeSection}`}
+            initial={{ y: -400, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 30, damping: 18 }}
+            className="mb-20 z-30 relative"
+          >
             <BackIcon onClick={() => setActiveSection("home")} />
-          </div>
+          </motion.div>
         )}
 
         <motion.div
