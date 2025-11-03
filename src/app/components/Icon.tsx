@@ -55,7 +55,6 @@ const Icon: React.FC<IconProps> = ({
           ) {
             return React.cloneElement(child as React.ReactElement<React.SVGProps<SVGPathElement>>, {
               ref: pathRef,
-              className: "icon-stroke-hover",
             });
           }
           return child;

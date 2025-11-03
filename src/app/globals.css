@@ -66,17 +66,6 @@ body::before {
   }
 }
 
-/* Default: icon is fully drawn */
-.icon-stroke-hover {
-  stroke-dasharray: none;
-  stroke-dashoffset: 0;
-}
-
-/* On hover: restart animation */
-.group:hover .icon-stroke-hover {
-  animation: draw-stroke 2s ease forwards;
-}
-
 /* Business card slide */
 .card {
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
