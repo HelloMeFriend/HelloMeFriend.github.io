@@ -21,7 +21,7 @@ export default function IconTab() {
                 </a>
 
                 {/* Email */}
-                <a href="mailto:omar-alshanyour@outlook.com">
+                <a href="mailto:omaralshanyour@hotmail.com">
                     <Icon width={40} height={40}>
                         <path id="Icon" d="M33.3334 6.66663C35.1667 6.66663 36.6667 8.16663 36.6667 9.99996L36.6667 30C36.6667 31.8333 35.1667 33.3333 33.3334 33.3333L6.66671 33.3333C4.83337 33.3333 3.33337 31.8333 3.33337 30L3.33337 9.99996C3.33337 8.16663 4.83337 6.66663 6.66671 6.66663L33.3334 6.66663ZM36.6667 9.99996L20 21.6666L3.33337 9.99996" fillRule="evenodd" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.5" />
                     </Icon>
